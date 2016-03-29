@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="rapom">
+    <meta name="description" content="Rapom">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vex-js/2.3.3/js/vex.combined.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vex-js/2.3.3/css/vex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vex-js/2.3.3/css/vex-theme-plain.css" />
+    <script>vex.defaultOptions.className = 'vex-theme-plain';</script>
+
+    <script src="/js/main.js"></script>
+
+    <title>Rapom</title>
+  </head>
+  <body>
+    <header>
+      <div class='container'>
+        <h1><a href='/'><i class="fa fa-globe"></i> Rapom</a></h1>
+        <div class='navigation'>
+          <div class='container pure-menu pure-menu-open pure-menu-horizontal'>
+            <ul class='pure-menu-list'>
+              {% for my_page in site.pages %}
+                {% if my_page.title %}
+                  {% if my_page.url == page.url %}
+                    <li class='pure-menu-item pure-menu-selected'>
+                      <a class='pure-menu-link' href='{{ my_page.url | prepend: site.baseurl}}'>{{ my_page.title }}</a>
+                    </li>
+                  {% else %}
+                    <li class='pure-menu-item'>
+                      <a class='pure-menu-link' href='{{ my_page.url | prepend: site.baseurl}}'>{{ my_page.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {{ content }}
+
+    <footer>
+      <div class='container'>
+        <p>
+          &copy; Rapom &mdash; <a href='/'>Služby</a> &mdash; <a href='/kontakt'>Kontakt</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
