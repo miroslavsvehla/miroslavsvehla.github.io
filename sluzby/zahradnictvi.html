@@ -13,10 +13,10 @@ layout: default
   <div class="pure-g">
     {% for item in site.data.items %}
       <div class="pure-u-1-3">
-        <div class='item' data-title="{{ item.title }}" data-desc="{{ item.description }}" data-att1="{{ item.att1 }}" data-att2="{{ item.att2 }}" data-image="{{ item.image }}" data-price="{{ item.price }}">
-          <a href='#'><img class='pure-img' src="{{ item.image }}" /></a>
-          <h4><a href='#'>{{ item.title }}</a></h4>
-          <p><strong>{{ item.price }}</strong></p>
+        <div class='item' data-title="{{ item.title }}" data-title2="{{ item.title2 }}" data-desc="{{ item.description }}" data-att1="{{ item.att1 }}" data-att2="{{ item.att2 }}" data-att3="{{ item.att3 }}" data-price="{{ item.price }}">
+          <a href='#'><img class='pure-img' src="/images/{{ item.title }}.png" /></a>
+          <h4><a href='#'>{{ item.title }} / {{ item.title2 }}</a></h4>
+          <p><strong>{{ item.price }} Kč</strong></p>
         </div>
       </div>
     {% endfor %}
