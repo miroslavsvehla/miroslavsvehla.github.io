@@ -11,7 +11,7 @@
         ]
       });
     };
-    return $('.item a').on('click', function(e) {
+    $('.item a').on('click', function(e) {
       var args, item;
       e.preventDefault();
       item = $(this).parents('.item');
@@ -21,6 +21,30 @@
         };
       })(this));
       return showModal.apply(null, args);
+    });
+    return $('.reference-img').on('click', function(e) {
+      var gallery, img, items, n, num, options, pswpElement, slug;
+      pswpElement = document.querySelectorAll('.pswp')[0];
+      img = $(e.target);
+      n = img.data('n');
+      slug = img.data('slug');
+      items = (function() {
+        var i, ref, results;
+        results = [];
+        for (num = i = 1, ref = n - 1; 1 <= ref ? i <= ref : i >= ref; num = 1 <= ref ? ++i : --i) {
+          results.push({
+            src: "/images/" + slug + "/Foto " + num + ".png",
+            w: 472,
+            h: 315
+          });
+        }
+        return results;
+      })();
+      options = {
+        index: 0
+      };
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+      return gallery.init();
     });
   });
 

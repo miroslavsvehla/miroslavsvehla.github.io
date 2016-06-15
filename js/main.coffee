@@ -26,3 +26,16 @@ jQuery ->
     item = $(this).parents('.item')
     args = ['title', 'title2', 'desc', 'att1', 'att2', 'att3', 'price'].map((d) => item.data(d))
     showModal(args...)
+
+  $('.reference-img').on 'click', (e) ->
+    pswpElement = document.querySelectorAll('.pswp')[0]
+    img = $(e.target)
+    n = img.data('n')
+    slug = img.data('slug')
+    items = ({ src: "/images/#{slug}/Foto #{num}.png", w: 472, h: 315 } for num in [1..n-1])
+    options = {
+      index: 0
+    }
+
+    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
+    gallery.init()

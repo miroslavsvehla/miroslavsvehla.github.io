@@ -18,21 +18,11 @@ header h1 a {
 
 .navigation .container {
   padding: 0; }
-.navigation .pure-menu {
-  background-color: transparent; }
-  .navigation .pure-menu a {
-    color: #414141; }
-    .navigation .pure-menu a:hover {
-      background-color: transparent; }
-.navigation .pure-menu-selected {
-  background-color: #eee; }
 
 .pure-menu .pure-menu-link {
   padding: 10px 20px 10px 20px; }
-  .pure-menu .pure-menu-link:hover {
-    color: #5870A8; }
 .pure-menu .pure-menu-selected {
-  font-weight: bold; }
+  background-color: #eee; }
 
 .container {
   padding: 1em;

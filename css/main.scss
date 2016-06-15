@@ -44,31 +44,21 @@ header {
   .container {
     padding: 0;
   }
-  .pure-menu {
-    // background-color: rgba(255, 255, 255, 0.5);
-    background-color: transparent;
-    a {
-      color: $text-color;
-      &:hover {
-        background-color: transparent;
-      }
-    }
-  }
-  .pure-menu-selected {
-    // background-color: rgba(255, 255, 255, 0.8);
-    background-color: #eee;
-  }
 }
 
 .pure-menu {
   .pure-menu-link {
     padding: 10px 20px 10px 20px;
-    &:hover {
-      color: $main-color;
-    }
+    // &:hover {
+    //   color: $main-color;
+    // }
   }
   .pure-menu-selected {
-    font-weight: bold;
+    background-color: #eee;
+    // font-weight: bold;
+  }
+  .pure-menu-children {
+    // border: 1px solid #eee;
   }
 }
 

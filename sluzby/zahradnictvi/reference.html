@@ -1,0 +1,15 @@
+---
+title: Reference
+layout: default
+---
+
+<div class='container'>
+  <div class='page-header'>
+    <h2>Zahradnické služby</h2>
+  </div>
+  <h3>Reference</h3>
+  {% for reference in site.data.references %}
+    <h4>{{ reference.title }}<h4>
+    <a href='#'><img data-slug='{{ reference.slug }}' data-n='{{ reference.photos_count }}' class='pure-img reference-img' src="/images/{{ reference.slug }}/Foto 1.png" /></a>
+  {% endfor %}
+</div>
